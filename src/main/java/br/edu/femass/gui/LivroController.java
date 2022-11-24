@@ -4,8 +4,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import br.edu.femass.dao.DaoAutor;
-import br.edu.femass.model.Autor;
+import br.edu.femass.dao.DaoLivro;
+import br.edu.femass.model.Livro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,19 +16,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-public class AutorController implements Initializable {
+
+public class LivroController implements Initializable {
     
     @FXML
-    private TextField txtNome;
-
-    @FXML
-    private TextField txtSobrenome;
-
-    @FXML
-    private TextField txtNacionalidade;
-
-    @FXML
-    private ListView<Autor> lstAutor;
+    private TextField txtTitulo;
 
     @FXML
     private Button btnAlterar;
@@ -41,24 +33,25 @@ public class AutorController implements Initializable {
 
     @FXML
     private Button btnRegistrar;
-    
-    DaoAutor dao = new DaoAutor();
 
-    private Autor autor;
+    @FXML
+    private ListView<Livro> lstLivro;
+
+    DaoLivro dao = new DaoLivro();
+
+    private Livro livro;
 
     private Boolean incluindo;
-    
+
     @FXML
     private void registrar_click(ActionEvent event) {
         
-        autor.setNome(txtNome.getText());
-        autor.setSobrenome(txtSobrenome.getText());
-        autor.setNacionalidade(txtNacionalidade.getText());
+        livro.setTitulo(txtTitulo.getText());
 
         if (incluindo) {
-            dao.inserir(autor);
+            dao.inserir(livro);
         } else {
-            dao.alterar(autor);
+            dao.alterar(livro);
         }
 
         preencherLista();
@@ -71,11 +64,9 @@ public class AutorController implements Initializable {
 
         incluindo = true;
 
-        autor = new Autor();
-        txtNome.setText("");
-        txtSobrenome.setText("");
-        txtNacionalidade.setText("");
-        txtNome.requestFocus();
+        livro = new Livro();
+        txtTitulo.setText("");
+        txtTitulo.requestFocus();
     }
 
     @FXML
@@ -87,7 +78,7 @@ public class AutorController implements Initializable {
 
     @FXML
     private void excluir_click(ActionEvent event) {
-        dao.apagar(autor);
+        dao.apagar(livro);
         preencherLista();
     }
 
@@ -102,36 +93,31 @@ public class AutorController implements Initializable {
     }
 
     private void editar(boolean habilitar) {
-        lstAutor.setDisable(habilitar);
-        txtNome.setDisable(!habilitar);
-        txtSobrenome.setDisable(!habilitar);
-        txtNacionalidade.setDisable(!habilitar);
+        lstLivro.setDisable(habilitar);
+        txtTitulo.setDisable(!habilitar);
         btnRegistrar.setDisable(!habilitar);
         btnAlterar.setDisable(habilitar);
         btnIncluir.setDisable(habilitar);
         btnExcluir.setDisable(habilitar);
-
-
     }
 
 
     private void exibirDados() {
     
-        this.autor = lstAutor.getSelectionModel().getSelectedItem();
+        this.livro = lstLivro.getSelectionModel().getSelectedItem();
 
-        if (autor==null) return;
+        if (livro==null) return;
 
-        txtNome.setText(autor.getNome());
-        txtSobrenome.setText(autor.getSobrenome());
-        txtNacionalidade.setText(autor.getNacionalidade());
+        txtTitulo.setText(livro.getTitulo());
     }
 
     private void preencherLista() {
-        List<Autor> autores = dao.buscarTodos();
+        List<Livro> livros = dao.buscarTodos();
 
-        ObservableList<Autor> data = FXCollections.observableArrayList(autores);
-        lstAutor.setItems(data);
+        ObservableList<Livro> data = FXCollections.observableArrayList(livros);
+        lstLivro.setItems(data);
     }
+     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

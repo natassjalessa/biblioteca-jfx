@@ -18,5 +18,12 @@
       <Button fx:id="btnAlterar" layoutX="398.0" layoutY="303.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
       <Button fx:id="btnIncluir" layoutX="524.0" layoutY="303.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
       <Button fx:id="btnExcluir" layoutX="460.0" layoutY="303.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
+      <TableView fx:id="tabelaLivro" layoutX="29.0" layoutY="128.0" prefHeight="200.0" prefWidth="336.0">
+        <columns>
+            <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colAutor" prefWidth="75.0" text="Autor" />
+          <TableColumn fx:id="colTitulo" prefWidth="75.0" text="Titulo" />
+        </columns>
+      </TableView>
    </children>
 </Pane>

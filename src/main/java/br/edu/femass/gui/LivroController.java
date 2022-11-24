@@ -13,7 +13,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 
@@ -33,6 +36,15 @@ public class LivroController implements Initializable {
 
     @FXML
     private Button btnRegistrar;
+
+    @FXML
+    private TableView<Livro> tabelaLivro = new TableView<Livro>();
+
+    @FXML
+    private TableColumn<Livro,String> colTitulo = new TableColumn<>();
+
+    @FXML
+    private TableColumn<Livro,Long> colID = new TableColumn<>();
 
     @FXML
     private ListView<Livro> lstLivro;
@@ -55,6 +67,7 @@ public class LivroController implements Initializable {
         }
 
         preencherLista();
+        preencherTabela();
         editar(false);
     }
 
@@ -117,11 +130,23 @@ public class LivroController implements Initializable {
         ObservableList<Livro> data = FXCollections.observableArrayList(livros);
         lstLivro.setItems(data);
     }
+
+    private void preencherTabela() {
+        List<Livro> livros = dao.buscarTodos();
+
+        ObservableList<Livro> data = FXCollections.observableArrayList(livros);
+        tabelaLivro.setItems(data);
+    }
      
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        colTitulo.setCellValueFactory(new PropertyValueFactory<Livro, String>("titulo"));
+        colID.setCellValueFactory(new PropertyValueFactory<Livro, Long>("id"));
+
         preencherLista();
+        preencherTabela();
 
     }    
 }

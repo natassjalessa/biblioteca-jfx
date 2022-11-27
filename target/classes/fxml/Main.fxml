@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.MainController">
    <children>
-      <Button layoutX="121.0" layoutY="110.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="173.0" text="Atendente" />
+      <Button layoutX="121.0" layoutY="110.0" mnemonicParsing="false" onAction="#atendente_click" prefHeight="57.0" prefWidth="173.0" text="Atendente" />
       <Button layoutX="121.0" layoutY="197.0" mnemonicParsing="false" onAction="#bibliotecario_click" prefHeight="57.0" prefWidth="173.0" text="Bibliotecário" />
    </children>
 </Pane>

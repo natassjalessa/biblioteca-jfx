@@ -4,7 +4,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import br.edu.femass.dao.DaoAutor;
 import br.edu.femass.dao.DaoLivro;
+import br.edu.femass.model.Autor;
 import br.edu.femass.model.Livro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -47,11 +50,20 @@ public class LivroController implements Initializable {
     private TableColumn<Livro,Long> colID = new TableColumn<>();
 
     @FXML
+    private TableColumn<Livro,String> colAutor = new TableColumn<>();
+
+    @FXML
     private ListView<Livro> lstLivro;
+
+    @FXML
+    private ComboBox<Autor> cboAutor;
+
+    DaoAutor daoAutor = new DaoAutor();
 
     DaoLivro dao = new DaoLivro();
 
     private Livro livro;
+    private Autor autor;
 
     private Boolean incluindo;
 
@@ -62,8 +74,10 @@ public class LivroController implements Initializable {
 
         if (incluindo) {
             dao.inserir(livro);
+            //daoAutor.inserir(autor);
         } else {
             dao.alterar(livro);
+            //daoAutor.alterar(autor);
         }
 
         preencherLista();
@@ -74,6 +88,7 @@ public class LivroController implements Initializable {
     @FXML
     private void incluir_click(ActionEvent event) {
         editar(true);
+        preencherCombo();
 
         incluindo = true;
 
@@ -118,6 +133,9 @@ public class LivroController implements Initializable {
     private void exibirDados() {
     
         this.livro = lstLivro.getSelectionModel().getSelectedItem();
+        this.autor = cboAutor.getSelectionModel().getSelectedItem();
+
+        if (autor==null) return;
 
         if (livro==null) return;
 
@@ -129,6 +147,15 @@ public class LivroController implements Initializable {
 
         ObservableList<Livro> data = FXCollections.observableArrayList(livros);
         lstLivro.setItems(data);
+
+    }
+
+    private void preencherCombo() {
+        List<Autor> autores = daoAutor.buscarTodos();
+
+        ObservableList<Autor> data = FXCollections.observableArrayList(autores);
+        cboAutor.setItems(data);
+
     }
 
     private void preencherTabela() {
@@ -143,9 +170,11 @@ public class LivroController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         colTitulo.setCellValueFactory(new PropertyValueFactory<Livro, String>("titulo"));
+        colAutor.setCellValueFactory(new PropertyValueFactory<Livro, String>("autor"));
         colID.setCellValueFactory(new PropertyValueFactory<Livro, Long>("id"));
 
         preencherLista();
+        preencherTabela();
         preencherTabela();
 
     }    

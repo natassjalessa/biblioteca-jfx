@@ -4,16 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Leitor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
-    private String endereco;
-    private String telefone;
+    protected Long id;
+    protected String nome;
+    protected String endereco;
+    protected String telefone;
     protected Integer prazoMaximoDevolucao;
 
     public Leitor() {
@@ -64,11 +67,6 @@ public class Leitor {
     
     public void setPrazoMaximoDevolucao(Integer prazoMaximoDevolucao) {
         this.prazoMaximoDevolucao = prazoMaximoDevolucao;
-    }
-
-    public boolean equals(Object obj) {
-        Leitor leitor = (Leitor) obj;
-        return this.prazoMaximoDevolucao.equals(leitor.getPrazoMaximoDevolucao());
     }
 
     @Override

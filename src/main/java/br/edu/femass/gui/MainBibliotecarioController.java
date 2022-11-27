@@ -17,8 +17,6 @@ public class MainBibliotecarioController implements Initializable {
     @FXML
     private void cadastroLivro_click(ActionEvent event) {
 
-
-
         try { 
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/Livro.fxml"));
         

@@ -9,18 +9,25 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AutorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AutorController">
    <children>
-      <Label layoutX="45.0" layoutY="28.0" text="Nome:" />
-      <Label layoutX="41.0" layoutY="76.0" text="Sobrenome:" />
-      <Label layoutX="41.0" layoutY="120.0" text="Nacionalidade:" />
-      <TextField fx:id="txtNome" disable="true" layoutX="138.0" layoutY="24.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="txtSobrenome" disable="true" layoutX="138.0" layoutY="72.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="txtNacionalidade" disable="true" layoutX="138.0" layoutY="116.0" prefHeight="25.0" prefWidth="218.0" />
-      <Button fx:id="btnRegistrar" disable="true" layoutX="41.0" layoutY="159.0" mnemonicParsing="false" onAction="#registrar_click" text="Registrar" />
-      <ListView fx:id="lstAutor" layoutX="386.0" layoutY="20.0" onKeyPressed="#lstAutor_KeyPressed" onMouseClicked="#lstAutor_MouseClicked" prefHeight="267.0" prefWidth="200.0" />
-      <Button fx:id="btnAlterar" layoutX="398.0" layoutY="303.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
-      <Button fx:id="btnIncluir" layoutX="524.0" layoutY="303.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
-      <Button fx:id="btnExcluir" layoutX="460.0" layoutY="303.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
+      <Label layoutX="53.0" layoutY="76.0" text="Nome:" />
+      <Label layoutX="49.0" layoutY="124.0" text="Sobrenome:" />
+      <Label layoutX="49.0" layoutY="168.0" text="Nacionalidade:" />
+      <TextField fx:id="txtNome" disable="true" layoutX="146.0" layoutY="72.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="txtSobrenome" disable="true" layoutX="146.0" layoutY="120.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="txtNacionalidade" disable="true" layoutX="146.0" layoutY="164.0" prefHeight="25.0" prefWidth="218.0" />
+      <Button fx:id="btnRegistrar" disable="true" layoutX="49.0" layoutY="207.0" mnemonicParsing="false" onAction="#registrar_click" text="Registrar" />
+      <Button fx:id="btnAlterar" layoutX="474.0" layoutY="248.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
+      <Button fx:id="btnIncluir" layoutX="600.0" layoutY="248.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
+      <Button fx:id="btnExcluir" layoutX="536.0" layoutY="248.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
+      <TableView fx:id="tabelaAutor" layoutX="385.0" layoutY="29.0" onKeyPressed="#tblAutor_KeyPressed" onMouseClicked="#tblAutor_MouseClicked" prefHeight="200.0" prefWidth="352.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="61.0" text="ID" />
+            <TableColumn fx:id="colNome" prefWidth="71.0" text="Nome" />
+          <TableColumn fx:id="colSobrenome" prefWidth="93.0" text="Sobrenome" />
+            <TableColumn fx:id="colNacionalidade" prefWidth="124.0" text="Nacionalidade" />
+        </columns>
+      </TableView>
    </children>
 </Pane>

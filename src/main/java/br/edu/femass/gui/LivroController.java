@@ -50,10 +50,7 @@ public class LivroController implements Initializable {
     private TableColumn<Livro,Long> colID = new TableColumn<>();
 
     @FXML
-    private TableColumn<Livro,String> colAutor = new TableColumn<>();
-
-    @FXML
-    private ListView<Livro> lstLivro;
+    private TableColumn<Autor,String> colAutor = new TableColumn<>();
 
     @FXML
     private ComboBox<Autor> cboAutor;
@@ -74,13 +71,12 @@ public class LivroController implements Initializable {
 
         if (incluindo) {
             dao.inserir(livro);
-            //daoAutor.inserir(autor);
+            daoAutor.inserir(autor);
         } else {
             dao.alterar(livro);
-            //daoAutor.alterar(autor);
+            daoAutor.alterar(autor);
         }
 
-        preencherLista();
         preencherTabela();
         editar(false);
     }
@@ -107,22 +103,26 @@ public class LivroController implements Initializable {
     @FXML
     private void excluir_click(ActionEvent event) {
         dao.apagar(livro);
-        preencherLista();
+        preencherTabela();
     }
 
     @FXML
-    private void lstAutor_KeyPressed(MouseEvent event) {
+    private void tblAutor_KeyPressed(MouseEvent event) {
         exibirDados();
     }
 
     @FXML
-    private void lstAutor_MouseClicked(MouseEvent event) {
+    private void tblAutor_MouseClicked(MouseEvent event) {
         exibirDados();
     }
+
+
+    //CONFIGURAÇÃO
 
     private void editar(boolean habilitar) {
-        lstLivro.setDisable(habilitar);
+        tabelaLivro.setDisable(habilitar);
         txtTitulo.setDisable(!habilitar);
+        cboAutor.setDisable(!habilitar);
         btnRegistrar.setDisable(!habilitar);
         btnAlterar.setDisable(habilitar);
         btnIncluir.setDisable(habilitar);
@@ -132,10 +132,7 @@ public class LivroController implements Initializable {
 
     private void exibirDados() {
     
-        this.livro = lstLivro.getSelectionModel().getSelectedItem();
-        this.autor = cboAutor.getSelectionModel().getSelectedItem();
-
-        if (autor==null) return;
+        this.livro = tabelaLivro.getSelectionModel().getSelectedItem();
 
         if (livro==null) return;
 
@@ -146,7 +143,7 @@ public class LivroController implements Initializable {
         List<Livro> livros = dao.buscarTodos();
 
         ObservableList<Livro> data = FXCollections.observableArrayList(livros);
-        lstLivro.setItems(data);
+        tabelaLivro.setItems(data);
 
     }
 
@@ -170,11 +167,9 @@ public class LivroController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         colTitulo.setCellValueFactory(new PropertyValueFactory<Livro, String>("titulo"));
-        colAutor.setCellValueFactory(new PropertyValueFactory<Livro, String>("autor"));
+        colAutor.setCellValueFactory(new PropertyValueFactory<Autor, String>("autor"));
         colID.setCellValueFactory(new PropertyValueFactory<Livro, Long>("id"));
 
-        preencherLista();
-        preencherTabela();
         preencherTabela();
 
     }    

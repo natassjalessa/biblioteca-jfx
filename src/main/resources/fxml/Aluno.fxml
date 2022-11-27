@@ -10,28 +10,28 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AlunoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AlunoController">
    <children>
-      <Label layoutX="27.0" layoutY="65.0" text="Nome:" />
-      <Label layoutX="27.0" layoutY="96.0" text="Endereço:" />
-      <Label layoutX="29.0" layoutY="132.0" text="Telefone:" />
-      <Label layoutX="27.0" layoutY="169.0" text="Matricula:" />
-      <TextField fx:id="txtNomeAluno" layoutX="86.0" layoutY="61.0" prefHeight="25.0" prefWidth="214.0" />
-      <TextField fx:id="txtEnderecoAluno" layoutX="86.0" layoutY="92.0" prefHeight="25.0" prefWidth="214.0" />
-      <TextField fx:id="txtTelefoneAluno" layoutX="86.0" layoutY="128.0" prefHeight="25.0" prefWidth="214.0" />
-      <TextField fx:id="txtMatricula" layoutX="86.0" layoutY="165.0" prefHeight="25.0" prefWidth="214.0" />
-      <TableView fx:id="tabelaAluno" layoutX="349.0" layoutY="49.0" prefHeight="200.0" prefWidth="413.0">
+      <Label layoutX="107.0" layoutY="57.0" text="Nome:" />
+      <Label layoutX="107.0" layoutY="88.0" text="Endereço:" />
+      <Label layoutX="109.0" layoutY="124.0" text="Telefone:" />
+      <Label layoutX="107.0" layoutY="161.0" text="Matricula:" />
+      <TextField fx:id="txtNomeAluno" disable="true" layoutX="166.0" layoutY="53.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="txtEnderecoAluno" disable="true" layoutX="166.0" layoutY="84.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="txtTelefoneAluno" disable="true" layoutX="166.0" layoutY="120.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="txtMatricula" disable="true" layoutX="166.0" layoutY="157.0" prefHeight="25.0" prefWidth="214.0" />
+      <TableView fx:id="tabelaAluno" layoutX="53.0" layoutY="249.0" onKeyPressed="#tblAluno_KeyPressed" onMouseClicked="#tblAluno_MouseClicked" prefHeight="200.0" prefWidth="379.0">
         <columns>
-          <TableColumn fx:id="colIDAluno" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="colNomeAluno" prefWidth="75.0" text="Nome" />
             <TableColumn fx:id="colEndAluno" prefWidth="75.0" text="Endereço" />
             <TableColumn fx:id="colTelAluno" prefWidth="75.0" text="Telefone" />
             <TableColumn fx:id="colMatricula" prefWidth="75.0" text="Matricula" />
         </columns>
       </TableView>
-      <Button layoutX="236.0" layoutY="214.0" mnemonicParsing="false" onAction="#registrar_click" text="Registrar" />
-      <Button fx:id="btnExcluir" layoutX="530.0" layoutY="264.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
-      <Button fx:id="btnIncluir" layoutX="594.0" layoutY="264.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
-      <Button fx:id="btnAlterar" layoutX="468.0" layoutY="264.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
+      <Button fx:id="btnRegistrar" disable="true" layoutX="316.0" layoutY="206.0" mnemonicParsing="false" onAction="#registrar_click" text="Registrar" />
+      <Button fx:id="btnExcluir" layoutX="217.0" layoutY="468.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
+      <Button fx:id="btnIncluir" layoutX="281.0" layoutY="468.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
+      <Button fx:id="btnAlterar" layoutX="155.0" layoutY="468.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
    </children>
 </Pane>

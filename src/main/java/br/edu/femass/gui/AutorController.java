@@ -12,8 +12,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 public class AutorController implements Initializable {
@@ -28,9 +30,6 @@ public class AutorController implements Initializable {
     private TextField txtNacionalidade;
 
     @FXML
-    private ListView<Autor> lstAutor;
-
-    @FXML
     private Button btnAlterar;
 
     @FXML
@@ -41,6 +40,21 @@ public class AutorController implements Initializable {
 
     @FXML
     private Button btnRegistrar;
+
+    @FXML
+    private TableView<Autor> tabelaAutor = new TableView<Autor>();
+
+    @FXML
+    private TableColumn<Autor,Long> colID = new TableColumn<>();
+
+    @FXML
+    private TableColumn<Autor,String> colNome = new TableColumn<>();
+
+    @FXML
+    private TableColumn<Autor,String> colSobrenome = new TableColumn<>();
+
+    @FXML
+    private TableColumn<Autor,String> colNacionalidade = new TableColumn<>();
     
     DaoAutor dao = new DaoAutor();
 
@@ -61,7 +75,7 @@ public class AutorController implements Initializable {
             dao.alterar(autor);
         }
 
-        preencherLista();
+        preencherTabela();
         editar(false);
     }
 
@@ -88,21 +102,21 @@ public class AutorController implements Initializable {
     @FXML
     private void excluir_click(ActionEvent event) {
         dao.apagar(autor);
-        preencherLista();
+        preencherTabela();
     }
 
     @FXML
-    private void lstAutor_KeyPressed(MouseEvent event) {
+    private void tblAutor_KeyPressed(MouseEvent event) {
         exibirDados();
     }
 
     @FXML
-    private void lstAutor_MouseClicked(MouseEvent event) {
+    private void tblAutor_MouseClicked(MouseEvent event) {
         exibirDados();
     }
 
     private void editar(boolean habilitar) {
-        lstAutor.setDisable(habilitar);
+        tabelaAutor.setDisable(habilitar);
         txtNome.setDisable(!habilitar);
         txtSobrenome.setDisable(!habilitar);
         txtNacionalidade.setDisable(!habilitar);
@@ -117,7 +131,7 @@ public class AutorController implements Initializable {
 
     private void exibirDados() {
     
-        this.autor = lstAutor.getSelectionModel().getSelectedItem();
+        this.autor = tabelaAutor.getSelectionModel().getSelectedItem();
 
         if (autor==null) return;
 
@@ -126,16 +140,23 @@ public class AutorController implements Initializable {
         txtNacionalidade.setText(autor.getNacionalidade());
     }
 
-    private void preencherLista() {
+    private void preencherTabela() {
         List<Autor> autores = dao.buscarTodos();
 
         ObservableList<Autor> data = FXCollections.observableArrayList(autores);
-        lstAutor.setItems(data);
+        tabelaAutor.setItems(data);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        preencherLista();
+
+        colID.setCellValueFactory(new PropertyValueFactory<Autor,Long>("id"));
+        colNome.setCellValueFactory(new PropertyValueFactory<Autor,String>("Nome"));
+        colSobrenome.setCellValueFactory(new PropertyValueFactory<Autor,String>("Sobrenome"));
+        colNacionalidade.setCellValueFactory(new PropertyValueFactory<Autor,String>("Nacionalidade"));
+
+
+        preencherTabela();
 
     }    
 }

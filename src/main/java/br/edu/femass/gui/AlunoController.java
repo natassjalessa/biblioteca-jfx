@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import br.edu.femass.dao.DaoAluno;
 import br.edu.femass.model.Aluno;
-import br.edu.femass.model.Leitor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -129,6 +128,7 @@ public class AlunoController implements Initializable {
     private void tblAluno_MouseClicked(MouseEvent event) {
         exibirDados();
     }
+
 
     //CONFIGURAÇÃO
 

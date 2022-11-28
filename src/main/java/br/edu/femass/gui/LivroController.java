@@ -15,11 +15,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 
@@ -71,10 +71,8 @@ public class LivroController implements Initializable {
 
         if (incluindo) {
             dao.inserir(livro);
-            daoAutor.inserir(autor);
         } else {
             dao.alterar(livro);
-            daoAutor.alterar(autor);
         }
 
         preencherTabela();
@@ -89,6 +87,7 @@ public class LivroController implements Initializable {
         incluindo = true;
 
         livro = new Livro();
+        autor = new Autor();
         txtTitulo.setText("");
         txtTitulo.requestFocus();
     }
@@ -96,6 +95,7 @@ public class LivroController implements Initializable {
     @FXML
     private void alterar_click(ActionEvent event) {
         editar(true);
+        preencherCombo();
 
         incluindo = false;
     }
@@ -107,14 +107,26 @@ public class LivroController implements Initializable {
     }
 
     @FXML
-    private void tblAutor_KeyPressed(MouseEvent event) {
+    private void tblAutor_KeyPressed(KeyEvent event) {
         exibirDados();
     }
+
+    @FXML
+    private void cboAutor_KeyPressed(KeyEvent event) {
+        exibirDados();
+    }
+
 
     @FXML
     private void tblAutor_MouseClicked(MouseEvent event) {
         exibirDados();
     }
+
+    @FXML
+    private void cboAutor_MouseClicked(MouseEvent event) {
+        exibirDados();
+    }
+    
 
 
     //CONFIGURAÇÃO
@@ -137,14 +149,6 @@ public class LivroController implements Initializable {
         if (livro==null) return;
 
         txtTitulo.setText(livro.getTitulo());
-    }
-
-    private void preencherLista() {
-        List<Livro> livros = dao.buscarTodos();
-
-        ObservableList<Livro> data = FXCollections.observableArrayList(livros);
-        tabelaLivro.setItems(data);
-
     }
 
     private void preencherCombo() {

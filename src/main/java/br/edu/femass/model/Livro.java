@@ -1,14 +1,11 @@
 package br.edu.femass.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Livro {
@@ -18,18 +15,25 @@ public class Livro {
     private Long id;
     private String titulo;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Autor> autores;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Autor autor;
     
-    public Livro(String titulo) {
+    public Livro(String titulo, Autor autor) {
         this.titulo = titulo;
-
+        this.autor = autor;
     }
 
     public Livro() {
 
     }
 
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -41,11 +45,6 @@ public class Livro {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public void adicionarAutor(String nome, String sobrenome, String nacionalidade) {
-        if (autores==null) autores = new ArrayList();
-        autores.add(new Autor(nome, sobrenome, nacionalidade));
     }
 
     @Override

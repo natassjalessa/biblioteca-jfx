@@ -68,6 +68,7 @@ public class LivroController implements Initializable {
     private void registrar_click(ActionEvent event) {
         
         livro.setTitulo(txtTitulo.getText());
+        livro.setAutor(cboAutor.getSelectionModel().getSelectedItem());
 
         if (incluindo) {
             dao.inserir(livro);
@@ -112,23 +113,10 @@ public class LivroController implements Initializable {
     }
 
     @FXML
-    private void cboAutor_KeyPressed(KeyEvent event) {
-        exibirDados();
-    }
-
-
-    @FXML
     private void tblAutor_MouseClicked(MouseEvent event) {
         exibirDados();
     }
-
-    @FXML
-    private void cboAutor_MouseClicked(MouseEvent event) {
-        exibirDados();
-    }
     
-
-
     //CONFIGURAÇÃO
 
     private void editar(boolean habilitar) {

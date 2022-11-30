@@ -10,28 +10,29 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AlunoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AlunoController">
    <children>
-      <Label layoutX="107.0" layoutY="57.0" text="Nome:" />
-      <Label layoutX="107.0" layoutY="88.0" text="Endereço:" />
-      <Label layoutX="109.0" layoutY="124.0" text="Telefone:" />
-      <Label layoutX="107.0" layoutY="161.0" text="Matricula:" />
-      <TextField fx:id="txtNomeAluno" disable="true" layoutX="166.0" layoutY="53.0" prefHeight="25.0" prefWidth="214.0" />
-      <TextField fx:id="txtEnderecoAluno" disable="true" layoutX="166.0" layoutY="84.0" prefHeight="25.0" prefWidth="214.0" />
-      <TextField fx:id="txtTelefoneAluno" disable="true" layoutX="166.0" layoutY="120.0" prefHeight="25.0" prefWidth="214.0" />
-      <TextField fx:id="txtMatricula" disable="true" layoutX="166.0" layoutY="157.0" prefHeight="25.0" prefWidth="214.0" />
-      <TableView fx:id="tabelaAluno" layoutX="53.0" layoutY="249.0" onKeyPressed="#tblAluno_KeyPressed" onMouseClicked="#tblAluno_MouseClicked" prefHeight="200.0" prefWidth="379.0">
+      <Label layoutX="136.0" layoutY="57.0" text="Nome:" />
+      <Label layoutX="136.0" layoutY="88.0" text="Endereço:" />
+      <Label layoutX="138.0" layoutY="124.0" text="Telefone:" />
+      <Label layoutX="136.0" layoutY="161.0" text="Matricula:" />
+      <TextField fx:id="txtNomeAluno" disable="true" layoutX="195.0" layoutY="53.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="txtEnderecoAluno" disable="true" layoutX="195.0" layoutY="84.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="txtTelefoneAluno" disable="true" layoutX="195.0" layoutY="120.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="txtMatricula" disable="true" layoutX="195.0" layoutY="157.0" prefHeight="25.0" prefWidth="214.0" />
+      <TableView fx:id="tabelaAluno" layoutX="24.0" layoutY="249.0" onKeyPressed="#tblAluno_KeyPressed" onMouseClicked="#tblAluno_MouseClicked" prefHeight="200.0" prefWidth="514.0">
         <columns>
           <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colNomeAluno" prefWidth="75.0" text="Nome" />
-            <TableColumn fx:id="colEndAluno" prefWidth="75.0" text="Endereço" />
-            <TableColumn fx:id="colTelAluno" prefWidth="75.0" text="Telefone" />
-            <TableColumn fx:id="colMatricula" prefWidth="75.0" text="Matricula" />
+          <TableColumn fx:id="colNomeAluno" prefWidth="91.0" text="Nome" />
+            <TableColumn fx:id="colEndAluno" prefWidth="107.0" text="Endereço" />
+            <TableColumn fx:id="colTelAluno" prefWidth="73.0" text="Telefone" />
+            <TableColumn fx:id="colMatricula" prefWidth="98.0" text="Matricula" />
+            <TableColumn fx:id="colPrazo" prefWidth="69.0" text="Prazo" />
         </columns>
       </TableView>
-      <Button fx:id="btnRegistrar" disable="true" layoutX="316.0" layoutY="206.0" mnemonicParsing="false" onAction="#registrar_click" text="Registrar" />
-      <Button fx:id="btnExcluir" layoutX="217.0" layoutY="468.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
-      <Button fx:id="btnIncluir" layoutX="281.0" layoutY="468.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
-      <Button fx:id="btnAlterar" layoutX="155.0" layoutY="468.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
+      <Button fx:id="btnRegistrar" disable="true" layoutX="345.0" layoutY="206.0" mnemonicParsing="false" onAction="#registrar_click" text="Registrar" />
+      <Button fx:id="btnExcluir" layoutX="248.0" layoutY="467.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
+      <Button fx:id="btnIncluir" layoutX="312.0" layoutY="467.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
+      <Button fx:id="btnAlterar" layoutX="186.0" layoutY="467.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
    </children>
 </Pane>

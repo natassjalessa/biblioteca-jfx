@@ -24,7 +24,7 @@
           <TableColumn fx:id="colAutor" minWidth="0.0" prefWidth="103.0" text="Autor" />
         </columns>
       </TableView>
-      <ComboBox fx:id="cboAutor" disable="true" layoutX="94.0" layoutY="53.0" onKeyPressed="#cboAutor_KeyPressed" onMouseClicked="#cboAutor_MouseClicked" prefHeight="25.0" prefWidth="218.0" />
+      <ComboBox fx:id="cboAutor" disable="true" layoutX="94.0" layoutY="53.0" prefHeight="25.0" prefWidth="218.0" />
       <Label layoutX="45.0" layoutY="57.0" text="Autor" />
    </children>
 </Pane>

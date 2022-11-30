@@ -63,6 +63,9 @@ public class ProfessorController implements Initializable {
     @FXML
     private TableColumn<Professor,String> colDisciplina = new TableColumn<>();
 
+    @FXML
+    private TableColumn<Professor,Integer> colPrazo = new TableColumn<>();
+
     DaoProfessor daoProfessor = new DaoProfessor();
 
     private Professor professor;
@@ -174,6 +177,7 @@ public class ProfessorController implements Initializable {
         colEndProfessor.setCellValueFactory(new PropertyValueFactory<Professor,String>("Endereco"));
         colTelProfessor.setCellValueFactory(new PropertyValueFactory<Professor,String>("Telefone"));
         colDisciplina.setCellValueFactory(new PropertyValueFactory<Professor,String>("Disciplina"));
+        colPrazo.setCellValueFactory(new PropertyValueFactory<Professor,Integer>("prazoMaximoDevolucao"));
         
         preencherTabela();
     }    

@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import br.edu.femass.dao.DaoAluno;
 import br.edu.femass.model.Aluno;
+import br.edu.femass.model.Leitor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -63,6 +64,9 @@ public class AlunoController implements Initializable {
 
     @FXML
     private TableColumn<Aluno,String> colMatricula = new TableColumn<>();
+
+    @FXML
+    private TableColumn<Leitor,Integer> colPrazo = new TableColumn<>();
 
     DaoAluno daoAluno = new DaoAluno();
 
@@ -175,6 +179,7 @@ public class AlunoController implements Initializable {
         colEndAluno.setCellValueFactory(new PropertyValueFactory<Aluno,String>("Endereco"));
         colTelAluno.setCellValueFactory(new PropertyValueFactory<Aluno,String>("Telefone"));
         colMatricula.setCellValueFactory(new PropertyValueFactory<Aluno,String>("Matricula"));
+        colPrazo.setCellValueFactory(new PropertyValueFactory<Leitor,Integer>("prazoMaximoDevolucao"));
 
         preencherTabela();
     }    

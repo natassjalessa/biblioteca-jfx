@@ -8,14 +8,13 @@ public class Aluno extends Leitor {
     private String matricula;
 
     public Aluno() {
-
+        this.setPrazoMaximoDevolucao(15);
     }
 
 
     public Aluno(String nome, String endereco, String telefone, String matricula) {
         super(nome, endereco, telefone);
         this.matricula = matricula;
-        this.setPrazoMaximoDevolucao(15);
     }
 
 

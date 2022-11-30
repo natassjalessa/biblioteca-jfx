@@ -13,5 +13,6 @@
    <children>
       <Button layoutX="121.0" layoutY="110.0" mnemonicParsing="false" onAction="#cadastroLivro_click" prefHeight="57.0" prefWidth="173.0" text="Cadastrar Livro" />
       <Button layoutX="121.0" layoutY="185.0" mnemonicParsing="false" onAction="#cadastroAutor_click" prefHeight="57.0" prefWidth="173.0" text="Cadastrar Autor" />
+      <Button layoutX="121.0" layoutY="264.0" mnemonicParsing="false" onAction="#cadastroExemplar_click" prefHeight="57.0" prefWidth="173.0" text="Cadastrar Exemplar" />
    </children>
 </Pane>

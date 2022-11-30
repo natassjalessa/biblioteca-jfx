@@ -54,6 +54,26 @@ public class MainBibliotecarioController implements Initializable {
         }
 
     }
+
+    @FXML
+    private void cadastroExemplar_click(ActionEvent event) {
+
+        try { 
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Exemplar.fxml"));
+        
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/styles/Styles.css");
+            scene.getRoot().setStyle("-fx-font-family: 'serif'");
+
+            Stage stage = new Stage();
+            stage.setTitle("Cadastros");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
      
     
     @Override

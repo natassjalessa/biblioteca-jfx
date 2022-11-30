@@ -16,14 +16,15 @@ public class Exemplar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private LocalDate dataAquisicao;
     private Long id;
+    private LocalDate dataAquisicao;
+    
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Livro livro;
 
     public Exemplar(LocalDate dataAquisicao, Livro livro) {
-        this.dataAquisicao = LocalDate.now(Clock.systemDefaultZone());
+        this.dataAquisicao = LocalDate.now();
         this.livro = livro;
     }
 

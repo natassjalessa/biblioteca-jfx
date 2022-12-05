@@ -1,6 +1,7 @@
 package br.edu.femass.gui;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -37,6 +38,9 @@ public class ExemplarController implements Initializable {
 
     @FXML
     private TableColumn<Exemplar,Long> colID;
+
+    @FXML
+    private TableColumn<Exemplar,LocalDate> colRegistro;
 
     @FXML
     private Button btnRegistrar;
@@ -147,7 +151,9 @@ public class ExemplarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         colID.setCellValueFactory(new PropertyValueFactory<Exemplar,Long>("id"));
-        colExemplar.setCellValueFactory(new PropertyValueFactory<Livro,String>("titulo"));
+        colExemplar.setCellValueFactory(new PropertyValueFactory<Livro,String>("livro"));
+        colRegistro.setCellValueFactory(new PropertyValueFactory<Exemplar,LocalDate>("dataAquisicao"));
+
 
         preencherTabela();
 

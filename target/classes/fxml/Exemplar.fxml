@@ -9,18 +9,19 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="352.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.ExemplarController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="352.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.ExemplarController">
    <children>
-      <Button fx:id="btnRegistrar" disable="true" layoutX="79.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="232.0" text="Registrar" />
-      <TableView fx:id="tabelaExemplar" layoutX="391.0" layoutY="23.0" prefHeight="275.0" prefWidth="378.0">
+      <Button fx:id="btnRegistrar" disable="true" layoutX="79.0" layoutY="135.0" mnemonicParsing="false" onAction="#registrar_click" prefHeight="25.0" prefWidth="232.0" text="Registrar" />
+      <TableView fx:id="tabelaExemplar" layoutX="391.0" layoutY="23.0" prefHeight="275.0" prefWidth="277.0">
         <columns>
           <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="colExemplar" prefWidth="75.0" text="Exemplar" />
+            <TableColumn fx:id="colRegistro" prefWidth="126.0" text="Registro" />
         </columns>
       </TableView>
       <ComboBox fx:id="cboLivro" disable="true" layoutX="27.0" layoutY="60.0" prefHeight="25.0" prefWidth="336.0" />
-      <Button fx:id="btnExcluir" layoutX="555.0" layoutY="306.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
-      <Button fx:id="btnIncluir" layoutX="619.0" layoutY="306.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
-      <Button fx:id="btnAlterar" layoutX="493.0" layoutY="306.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="504.0" layoutY="307.0" mnemonicParsing="false" onAction="#excluir_click" text="Excluir" />
+      <Button fx:id="btnIncluir" layoutX="568.0" layoutY="307.0" mnemonicParsing="false" onAction="#incluir_click" text="Incluir" />
+      <Button fx:id="btnAlterar" layoutX="442.0" layoutY="307.0" mnemonicParsing="false" onAction="#alterar_click" text="Alterar" />
    </children>
 </Pane>

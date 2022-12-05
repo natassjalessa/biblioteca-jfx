@@ -24,12 +24,11 @@ public class Exemplar {
     private Livro livro;
 
     public Exemplar(LocalDate dataAquisicao, Livro livro) {
-        this.dataAquisicao = LocalDate.now();
         this.livro = livro;
     }
 
     public Exemplar() {
-
+        this.dataAquisicao = LocalDate.now();
     }
 
     public LocalDate getDataAquisicao() {
@@ -56,5 +55,8 @@ public class Exemplar {
         this.id = id;
     }
     
-    
+    @Override
+    public String toString() {
+        return this.getLivro().toString();
+    }
 }

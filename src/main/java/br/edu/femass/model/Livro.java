@@ -15,8 +15,7 @@ public class Livro {
     private Long id;
     private String titulo;
 
-    @ManyToOne
-    //(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Autor autor;
     
     public Livro(String titulo, Autor autor) {

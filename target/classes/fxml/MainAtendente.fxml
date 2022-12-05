@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -9,9 +10,16 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.MainAtendenteController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.MainAtendenteController">
    <children>
-      <Button layoutX="121.0" layoutY="110.0" mnemonicParsing="false" onAction="#cadastroAluno_click" prefHeight="57.0" prefWidth="173.0" text="Cadastrar Aluno" />
-      <Button layoutX="121.0" layoutY="185.0" mnemonicParsing="false" onAction="#cadastroProfessor_click" prefHeight="57.0" prefWidth="173.0" text="Cadastrar Professor" />
+      <Button layoutX="29.0" layoutY="110.0" mnemonicParsing="false" onAction="#cadastroAluno_click" prefHeight="25.0" prefWidth="426.0" text="Cadastrar Aluno" />
+      <Button layoutX="31.0" layoutY="147.0" mnemonicParsing="false" onAction="#cadastroProfessor_click" prefHeight="25.0" prefWidth="426.0" text="Cadastrar Professor" />
+      <Button layoutX="29.0" layoutY="185.0" mnemonicParsing="false" onAction="#emprestimo_click" prefHeight="14.0" prefWidth="432.0" text="Emprestimo" />
+      <Label alignment="CENTER" layoutX="84.0" layoutY="9.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="101.0" prefWidth="296.0" text="ATENDENTE" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="29.0" layoutY="223.0" mnemonicParsing="false" onAction="#devolucao_click" prefHeight="14.0" prefWidth="432.0" text="Devolução" />
    </children>
 </Pane>

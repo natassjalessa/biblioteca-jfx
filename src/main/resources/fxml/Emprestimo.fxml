@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.EmprestimoController">
+   <children>
+      <TableView fx:id="tabelaExemplar" layoutX="255.0" layoutY="31.0" prefHeight="275.0" prefWidth="451.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="colExemplar" prefWidth="235.0" text="Exemplar" />
+            <TableColumn fx:id="colRegistro" prefWidth="133.0" text="Registro" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="cboAluno" layoutX="30.0" layoutY="71.0" prefHeight="25.0" prefWidth="186.0" />
+      <Label layoutX="30.0" layoutY="31.0" prefHeight="40.0" prefWidth="170.0" text="ALUNO" textAlignment="CENTER" />
+      <Label layoutX="30.0" layoutY="169.0" prefHeight="40.0" prefWidth="170.0" text="PROFESSOR" textAlignment="CENTER" />
+      <Button layoutX="37.0" layoutY="121.0" mnemonicParsing="false" onAction="#registrarAluno_click" prefHeight="25.0" prefWidth="170.0" text="Emprestimo Aluno" />
+      <Label fx:id="cboProfessor1" alignment="CENTER" layoutX="293.0" layoutY="321.0" prefHeight="40.0" prefWidth="170.0" text="EMPRESTIMO" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Label>
+      <TableView fx:id="tabelaEmprestimo" layoutX="32.0" layoutY="368.0" prefHeight="238.0" prefWidth="678.0">
+        <columns>
+          <TableColumn fx:id="colIDEmprestimo" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colExemplarEmprestimo" prefWidth="285.0" text="Exemplar" />
+            <TableColumn fx:id="colLeitor" minWidth="0.0" prefWidth="140.0" text="Leitor" />
+            <TableColumn fx:id="colDataEmprestimo" prefWidth="177.0" text="Data Emprestimo" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cboProfessor" layoutX="30.0" layoutY="209.0" prefHeight="25.0" prefWidth="186.0" />
+      <Button layoutX="38.0" layoutY="254.0" mnemonicParsing="false" onAction="#registrarProfessor_click" prefHeight="25.0" prefWidth="170.0" text="Emprestimo Aluno" />
+   </children>
+</Pane>

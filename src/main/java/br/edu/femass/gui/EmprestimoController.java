@@ -149,7 +149,7 @@ public class EmprestimoController implements Initializable {
         colIDEmprestimo.setCellValueFactory(new PropertyValueFactory<Emprestimo,Long>("id"));
         colExemplarEmprestimo.setCellValueFactory(new PropertyValueFactory<Exemplar,String>("exemplar"));
         colLeitor.setCellValueFactory(new PropertyValueFactory<Leitor,String>("leitor"));
-        colDataEmprestimo.setCellValueFactory(new PropertyValueFactory<Emprestimo,LocalDate>("dataEmprestimo"));
+        colDataEmprestimo.setCellValueFactory(new PropertyValueFactory<Emprestimo,LocalDate>("dataPrevisaoDevolucao"));
 
         emprestimo = new Emprestimo();
         preencherTabela();

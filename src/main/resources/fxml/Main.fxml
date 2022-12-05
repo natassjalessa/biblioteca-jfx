@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -9,9 +10,14 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.MainController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="187.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.MainController">
    <children>
-      <Button layoutX="121.0" layoutY="110.0" mnemonicParsing="false" onAction="#atendente_click" prefHeight="57.0" prefWidth="173.0" text="Atendente" />
-      <Button layoutX="121.0" layoutY="197.0" mnemonicParsing="false" onAction="#bibliotecario_click" prefHeight="57.0" prefWidth="173.0" text="Bibliotecário" />
+      <Button layoutX="21.0" layoutY="116.0" mnemonicParsing="false" onAction="#atendente_click" prefHeight="57.0" prefWidth="173.0" text="Atendente" />
+      <Button layoutX="201.0" layoutY="116.0" mnemonicParsing="false" onAction="#bibliotecario_click" prefHeight="57.0" prefWidth="173.0" text="Bibliotecário" />
+      <Label alignment="CENTER" layoutX="53.0" layoutY="15.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="101.0" prefWidth="296.0" text="MENU" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="25.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

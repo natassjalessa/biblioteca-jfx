@@ -10,15 +10,17 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.DevolucaoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.DevolucaoController">
    <children>
-      <TableView fx:id="tabelaEmprestimo" layoutX="16.0" layoutY="20.0" prefHeight="238.0" prefWidth="678.0">
+      <TableView fx:id="tabelaEmprestimo" layoutX="18.0" layoutY="14.0" prefHeight="238.0" prefWidth="774.0">
          <columns>
             <TableColumn fx:id="colIDEmprestimo" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="colExemplarEmprestimo" prefWidth="285.0" text="Exemplar" />
-            <TableColumn fx:id="colLeitor" minWidth="0.0" prefWidth="140.0" text="Leitor" />
-            <TableColumn fx:id="colDataEmprestimo" prefWidth="177.0" text="Data Emprestimo" />
+            <TableColumn fx:id="colExemplarEmprestimo" prefWidth="250.0" text="Exemplar" />
+            <TableColumn fx:id="colLeitor" minWidth="0.0" prefWidth="143.0" text="Leitor" />
+            <TableColumn fx:id="colDataPrevistaDevolucao" prefWidth="180.0" text="Data Prevista Devolução" />
+            <TableColumn fx:id="colDevolucao" prefWidth="125.0" text="Data Devolucao" />
          </columns>
       </TableView>
+      <Button layoutX="302.0" layoutY="277.0" mnemonicParsing="false" onAction="#registrarDevolucao_click" prefHeight="25.0" prefWidth="207.0" text="Realizar Devolução" />
    </children>
 </Pane>

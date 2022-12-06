@@ -36,6 +36,6 @@
         </columns>
       </TableView>
       <ComboBox fx:id="cboProfessor" layoutX="30.0" layoutY="209.0" prefHeight="25.0" prefWidth="186.0" />
-      <Button layoutX="38.0" layoutY="254.0" mnemonicParsing="false" onAction="#registrarProfessor_click" prefHeight="25.0" prefWidth="170.0" text="Emprestimo Aluno" />
+      <Button layoutX="38.0" layoutY="254.0" mnemonicParsing="false" onAction="#registrarProfessor_click" prefHeight="25.0" prefWidth="170.0" text="Emprestimo Professor" />
    </children>
 </Pane>
